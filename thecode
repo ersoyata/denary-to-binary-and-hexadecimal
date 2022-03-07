@@ -1,0 +1,263 @@
+
+print("1) Denary to Binary")
+print("2) Denary to Hexadecimal")
+print("3) Binary to Denary")
+print("4) Binary to Hexadecimal")
+conversion = int(input("Please choose your conversion method: "))
+
+if conversion == 1:
+	binary = []
+	num = int(input("Enter a denary number: "))
+	if num > 256:
+		num = int(input("Enter a number lower than 256: "))
+	
+	if num - 128 >= 0:
+		binary.append("1")
+		num = num - 128
+	else:
+		binary.append("0")
+
+	if num - 64 >= 0:
+		binary.append("1")
+		num = num - 64
+	else:
+		binary.append("0")
+
+	if num - 32 >= 0:
+		binary.append("1")
+		num = num - 32
+	else:
+		binary.append("0")
+
+	if num - 16 >= 0:
+		binary.append("1")
+		num = num - 16
+	else:
+		binary.append("0")
+
+	if num - 8 >= 0:
+		binary.append("1")
+		num = num - 8
+	else:
+		binary.append("0")
+
+	if num - 4 >= 0:
+		binary.append("1")
+		num = num - 4
+	else:
+		binary.append("0")
+
+	if num - 2 >= 0:
+		binary.append("1")
+		num = num - 2
+	else:
+		binary.append("0")
+
+	if num - 1 >= 0:
+		binary.append("1")
+		num = num - 1
+	else:
+		binary.append("0")
+
+		print(binary)
+
+
+
+if conversion == 2:
+	hexa = []
+
+	nibbleLeft = 0
+	nibbleRight = 0
+	num = int(input("Enter a denary number: "))
+	if num > 256:
+		num = int(input("Enter a number lower than 256: "))
+	if num - 128 >= 0:
+		binary.append("1")
+		num = num - 128
+	else:
+		binary.append("0")
+
+	if num - 64 >= 0:
+		binary.append("1")
+		num = num - 64
+	else:
+		binary.append("0")
+
+	if num - 32 >= 0:
+		binary.append("1")
+		num = num - 32
+	else:
+		binary.append("0")
+
+	if num - 16 >= 0:
+		binary.append("1")
+		num = num - 16
+	else:
+		binary.append("0")
+
+	if num - 8 >= 0:
+		binary.append("1")
+		num = num - 8
+	else:
+		binary.append("0")
+
+	if num - 4 >= 0:
+		binary.append("1")
+		num = num - 4
+	else:
+		binary.append("0")
+
+	if num - 2 >= 0:
+		binary.append("1")
+		num = num - 2
+	else:
+		binary.append("0")
+
+	if num - 1 >= 0:
+		binary.append("1")
+		num = num - 1
+	else:
+		binary.append("0")
+
+	if binary[0] == '1':
+		nibbleLeft = nibbleLeft + 8
+
+	if binary[1] == '1':
+		nibbleLeft = nibbleLeft + 4
+
+	if binary[2] == '1':
+		nibbleLeft = nibbleLeft + 2
+
+	if binary[3] == '1':
+		nibbleLeft = nibbleLeft + 1
+
+	if nibbleLeft < 10:
+		hexa.append(nibbleLeft)
+	elif nibbleLeft == 10:
+		hexa.append("A")
+	elif nibbleLeft == 11:
+		hexa.append("B")
+	elif nibbleLeft == 12:
+		hexa.append("C")
+	elif nibbleLeft == 13:
+		hexa.append("D")
+	elif nibbleLeft == 14:
+		hexa.append("F")
+
+
+
+	if binary[4] == '1':
+		nibbleRight = nibbleRight + 8
+
+	if binary[5] == '1':
+		nibbleRight = nibbleRight + 4
+
+	if binary[6] == '1':
+		nibbleRight = nibbleRight + 2
+
+	if binary[7] == '1':
+		nibbleRight = nibbleRight + 1
+
+	if nibbleRight > 9:
+		if nibbleRight == 10:
+			hexa.append("A")
+		if nibbleRight == 11:
+			hexa.append("B")
+		if nibbleRight == 12:
+			hexa.append("C")
+		if nibbleRight == 13:
+			hexa.append("D")
+		if nibbleRight == 14:
+			hexa.append("F")
+	else:
+		hexa.append(nibbleRight)	
+
+	print(hexa)
+
+if conversion == 3:
+	bin = input("Enter a 8 digit binary number: ")
+	
+	if len(bin) != 8:
+		bin = input("Please enter a 8 digit binary number")
+	den = 0
+	
+	if bin[0] == "1":
+		den = den + 128
+	if bin[1] == "1":
+		den = den + 64
+	if bin[2] == "1":
+		den = den + 32
+	if bin[3] == "1":
+		den = den + 16
+	if bin[4] == "1":
+		den = den + 8
+	if bin[5] == "1":
+		den = den + 4
+	if bin[6] == "1":
+		den = den + 2
+	if bin[7] == "1":
+		den = den + 1
+
+	print(den)
+
+if conversion == 4:
+	bin = input("Enter a 8 digit binary number: ")
+
+	if len(bin) != 8:
+		bin = input("Please enter a 8 digit binary number: ")
+
+	hexa = []
+	nibbleLeft = 0
+	nibbleRight = 0
+
+	if bin[0] == "1":
+		nibbleLeft = nibbleLeft + 8
+	if bin[1] == "1":
+		nibbleLeft = nibbleLeft + 4
+	if bin[2] == "1":
+		nibbleLeft = nibbleLeft + 2
+	if bin[3] == "1":
+		nibbleLeft = nibbleLeft + 1
+	
+	if nibbleLeft > 9:
+		if nibbleLeft == 10:
+			hexa.append("A")
+		if nibbleRight == 11:
+			hexa.append("B")
+		if nibbleRight == 12:
+			hexa.append("C")
+		if nibbleRight == 13:
+			hexa.append("D")
+		if nibbleRight == 14:
+			hexa.append("E")
+		if nibbleRight == 15:
+			hexa.append("F")
+	else:
+		hexa.append(nibbleLeft)
+
+	if bin[4] == "1":
+		nibbleRight = nibbleRight + 8
+	if bin[5] == "1":
+		nibbleRight = nibbleRight + 4
+	if bin[6] == "1":
+		nibbleRight = nibbleRight + 2
+	if bin[7] == "1":
+		nibbleRight = nibbleRight + 1
+
+	if nibbleRight > 9:
+		if nibbleRight == 10:
+			hexa.append("A")
+		if nibbleRight == 11:
+			hexa.append("B")
+		if nibbleRight == 12:
+			hexa.append("C")
+		if nibbleRight == 13:
+			hexa.append("D")
+		if nibbleRight == 14:
+			hexa.append("E")
+		if nibbleRight == 15:
+			hexa.append("F")
+	else:
+		hexa.append(nibbleRight)
+
+	print(hexa)
